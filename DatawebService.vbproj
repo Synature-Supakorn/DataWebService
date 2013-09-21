@@ -18,7 +18,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <PublishUrl>http://localhost/DataWebService/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -33,6 +33,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,22 +56,46 @@
   <ItemGroup>
     <Reference Include="AMS.Profile, Version=2.0.1874.1294, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\ClsManageDataClass\AMS.Profile.dll</HintPath>
+      <HintPath>..\..\ClassLibrary\Krit Dll\AMS.Profile.dll</HintPath>
     </Reference>
-    <Reference Include="ClspRoMiSeForWeb, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ClspRoMiSeForWeb, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\ClassLibrary\Krit Dll\ClspRoMiSeForWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="DbConnLog">
+      <HintPath>..\..\ClassLibrary\Krit Dll\DbConnLog.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.2.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\ClsManageDataClass\MySql.Data.dll</HintPath>
+      <HintPath>..\..\ClassLibrary\Krit Dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="POSDBSQLFront">
+      <HintPath>..\..\ClassLibrary\Krit Dll\POSDBSQLFront.dll</HintPath>
+    </Reference>
+    <Reference Include="POSManageDataDeliveryTransfer">
+      <HintPath>..\..\ClassLibrary\Krit Dll\POSManageDataDeliveryTransfer.dll</HintPath>
     </Reference>
     <Reference Include="POSMySQL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\ClsManageDataClass\POSMySQL.dll</HintPath>
+      <HintPath>..\..\ClassLibrary\Krit Dll\POSMySQL.dll</HintPath>
     </Reference>
-    <Reference Include="POSTypeClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="pRoMiSe ExportImportData Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="pRoMiSe ManageData Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="pRoMiSeProgramProperty, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="pRoMiSeUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="POSTypeClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\ClassLibrary\Krit Dll\POSTypeClass.dll</HintPath>
+    </Reference>
+    <Reference Include="pRoMiSe AdditionalManageData">
+      <HintPath>..\..\ClassLibrary\Krit Dll\pRoMiSe AdditionalManageData.dll</HintPath>
+    </Reference>
+    <Reference Include="pRoMiSe ExportImportData Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\ClassLibrary\Krit Dll\pRoMiSe ExportImportData Class.dll</HintPath>
+    </Reference>
+    <Reference Include="pRoMiSe ManageData Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\ClassLibrary\Krit Dll\pRoMiSe ManageData Class.dll</HintPath>
+    </Reference>
+    <Reference Include="pRoMiSeProgramProperty, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\ClassLibrary\Krit Dll\pRoMiSeProgramProperty.dll</HintPath>
+    </Reference>
+    <Reference Include="pRoMiSeUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\ClassLibrary\Krit Dll\pRoMiSeUtil.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -79,9 +104,12 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TransferTransAndGenSaleDoc">
+      <HintPath>..\..\ClassLibrary\Krit Dll\TransferTransAndGenSaleDoc.dll</HintPath>
+    </Reference>
     <Reference Include="ZipForge2003, Version=2.0.3.0, Culture=neutral, PublicKeyToken=3a6e82ca8e39718a">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\ClsManageDataClass\ZipForge2003.dll</HintPath>
+      <HintPath>..\..\ClassLibrary\Krit Dll\ZipForge2003.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +160,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -147,12 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
-    <Content Include="bin\ClspRoMiSeForWeb.dll" />
-    <Content Include="bin\POSTypeClass.dll" />
-    <Content Include="bin\pRoMiSe ExportImportData Class.dll" />
-    <Content Include="bin\pRoMiSe ManageData Class.dll" />
-    <Content Include="bin\pRoMiSeProgramProperty.dll" />
-    <Content Include="bin\pRoMiSeUtil.dll" />
     <Content Include="bin\Release\pRoMiSeFrontRes.xml" />
   </ItemGroup>
   <ItemGroup>
